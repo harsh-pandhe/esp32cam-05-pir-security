@@ -9,7 +9,9 @@ An active smart home security node using an HC-SR501 PIR pyroelectric motion sen
 
 ---
 
-## 🖥️ Real Hardware Execution & Serial Log Proof
+## 🖥️ Real Live Dashboard Interface & Hardware Trace
+
+![Real Live Web Dashboard Footage](./docs/dashboard.png)
 
 ```text
 --- ESP32-CAM PIR Telegram Security System ---
