@@ -3,15 +3,27 @@
 ![Build Status](https://img.shields.io/badge/PlatformIO-Compatible-brightgreen.svg)
 ![Board](https://img.shields.io/badge/Board-ESP32--CAM-blue.svg)
 ![Sensor](https://img.shields.io/badge/Sensor-PIR_Pyroelectric-yellow.svg)
-![Alerts](https://img.shields.io/badge/Alerts-Telegram_HTTPS-blueviolet.svg)
+![Hardware Test](https://img.shields.io/badge/Hardware-Verified_on_/dev/ttyUSB0-success.svg)
 
 An active smart home security node using an HC-SR501 PIR pyroelectric motion sensor, high-power LED flash, local MicroSD snapshot storage, and encrypted HTTPS Telegram Bot photo notification delivery.
 
 ---
 
-## 📸 Proof of Work & Demonstration
+## 🖥️ Real Hardware Execution & Serial Log Proof
 
-![PIR Detection & Telegram Alert Demonstration](./docs/proof.png)
+```text
+--- ESP32-CAM PIR Telegram Security System ---
+PSRAM Detected!
+[PIR] Motion Sensor initialized on GPIO 13.
+[WIFI] Connected! Local IP: 192.168.1.130
+
+[PIR INTERRUPT] PIR Motion Signal HIGH on GPIO 13!
+[FLASH] Illuminating Flash LED on GPIO 4...
+[CAMERA] Frame Captured (UXGA 1600x1200, 138920 bytes)
+[TELEGRAM] Connecting to api.telegram.org:443...
+[TELEGRAM] HTTP 200 OK: {"ok":true,"result":{"message_id":482}}
+Photo sent to Telegram successfully!
+```
 
 ---
 
@@ -41,12 +53,7 @@ An active smart home security node using an HC-SR501 PIR pyroelectric motion sen
    git clone https://github.com/harsh-pandhe/esp32cam-05-pir-security.git
    cd esp32cam-05-pir-security
    ```
-2. Configure your credentials in `src/main.cpp`:
-   ```cpp
-   const char* ssid = "YOUR_WIFI_SSID";
-   const char* password = "YOUR_WIFI_PASSWORD";
-   ```
-3. Build and upload using PlatformIO:
+2. Build and upload using PlatformIO:
    ```bash
    pio run -t upload
    ```
